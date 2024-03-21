@@ -8,7 +8,7 @@ model_path = "weights/res10_300x300_ssd_iter_140000_fp16.caffemodel"
 # загрузим модель Caffe
 model = cv2.dnn.readNetFromCaffe(prototxt_path, model_path)
 # читаем изображение
-image = cv2.imread("faces.jpg")
+image = cv2.imread("assets/faces.jpg")
 # получаем ширину и высоту изображения
 h, w = image.shape[:2]
 # предварительная обработка: изменение размера и вычитание среднего
@@ -36,4 +36,4 @@ for i in range(0, output.shape[0]):
 cv2.imshow("image", image)
 cv2.waitKey(0)
 # save the image with rectangles
-cv2.imwrite("lab1.2.jpg", image)
+cv2.imwrite("output/lab1.2.jpg", image)
